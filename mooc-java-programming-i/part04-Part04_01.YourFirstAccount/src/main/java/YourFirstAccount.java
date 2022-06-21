@@ -6,6 +6,6 @@ public class YourFirstAccount {
         // Write your program here
         Account money = new Account("Marcelo", 100.00);
         money.deposit(20.00);
-        money.toString();
+        System.out.println(money.toString());
     }
 }
