@@ -8,7 +8,7 @@ public class YourFirstBankTransfer {
         Account checking2 = new Account("My account", 0);
         checking.withdrawal(100.0);
         checking2.deposit(100.0);
-        checking.toString();
-        checking2.toString();
+        System.out.println(checking.toString());
+        System.out.println(checking2.toString());
     }
 }
