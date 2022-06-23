@@ -13,22 +13,33 @@ public class GuestListFromAFile {
 
         ArrayList<String> list = new ArrayList<>();
         // implement reading the file here.
-        System.out.println("");
-
-        System.out.println("Enter names, an empty line quits.");
-        while (true) {
-            String name = scanner.nextLine();
-            if (name.isEmpty()) {
-                break;
+        
+        try(Scanner fileName = new Scanner(Paths.get(file))) {
+            
+            while(fileName.hasNextLine()) {
+                list.add(fileName.nextLine());
             }
+        
+            System.out.println("");
 
-            if (list.contains(name)) {
-                System.out.println("The name is on the list.");
-            } else {
-                System.out.println("The name is not on the list.");
+            System.out.println("Enter names, an empty line quits.");
+            while (true) {
+                String name = scanner.nextLine();
+                if (name.isEmpty()) {
+                    break;
+                }
+
+                if (list.contains(name)) {
+                    System.out.println("The name is on the list.");
+                } else {
+                    System.out.println("The name is not on the list.");
+                }
             }
-        }
 
         System.out.println("Thank you!");
+        
+        } catch (Exception e) {
+            System.out.println("Error: "+e.getMessage());
+        }
     }
 }
