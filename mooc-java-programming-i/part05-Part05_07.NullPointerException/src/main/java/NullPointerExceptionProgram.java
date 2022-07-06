@@ -20,6 +20,11 @@ public class NullPointerExceptionProgram {
             System.out.println(lines.get(index));
             index++;
         }
-
+        
+        Person person = new Person();
+        person = null;
+        
+        person.grow();
+        
     }
 }
