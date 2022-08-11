@@ -11,4 +11,27 @@ public class Apartment {
         this.princePerSquare = pricePerSquare;
     }
 
+    public boolean largerThan(Apartment compared) {
+        if(this.squares > compared.squares) {
+            return true;
+        }
+        return false;
+    }
+    
+    public int priceDifference(Apartment compared) {
+        int price1 = this.squares * this.princePerSquare;
+        int price2 = compared.squares * compared.princePerSquare;
+        
+        return Math.abs(price1-price2);
+    }
+    
+    public boolean moreExpensiveThan(Apartment compared) {
+        int price1 = this.squares * this.princePerSquare;
+        int price2 = compared.squares * compared.princePerSquare;
+        if(price1 > price2) {
+            return true;
+        }
+        return false;
+    }
+    
 }
